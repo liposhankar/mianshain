@@ -173,6 +173,51 @@
         min-height: auto;
       }
     }
+
+    /* 浮動LINE按鈕 */
+.floating-line {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  background: #06c755;
+  color: white;
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  z-index: 9999;
+
+  transition: 0.2s ease;
+}
+
+.floating-line:hover {
+  background: #05b34a;
+  transform: scale(1.08);
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  .floating-line {
+    width: 60px;
+    height: 60px;
+    font-size: 0.9rem;
+    right: 14px;
+    bottom: 14px;
+  }
+}
   </style>
 </head>
 
@@ -287,6 +332,13 @@
     updateStatus();
     setInterval(updateStatus, 1000);
   </script>
+
+  <!-- 浮動LINE按鈕 -->
+<a class="floating-line"
+  href="https://line.me/R/ti/p/@923ushmy"
+  target="_blank">
+  💬 LINE
+</a>
 
 </body>
 
