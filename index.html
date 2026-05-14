@@ -24,17 +24,12 @@
       background: linear-gradient(135deg, #d94e1f, #b83e11);
       color: white;
       text-align: center;
-      padding: 35px 20px;
+      padding: 28px 20px;
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       margin-bottom: 6px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      opacity: 0.95;
     }
 
     main {
@@ -44,7 +39,7 @@
     }
 
     section {
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     h2 {
@@ -52,25 +47,27 @@
       border-bottom: 2px solid #d94e1f;
       padding-bottom: 5px;
       margin-bottom: 15px;
-      font-size: 1.4rem;
     }
 
-    /* 狀態區（縮小版） */
+    /* 頂部狀態區 */
     .top-action {
-      margin-top: 18px;
+      margin-top: 14px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
+    /* 縮小版狀態燈 */
     .status-box {
       display: inline-block;
-      padding: 7px 11px;   /* 原本約14px → 縮小一半 */
+      padding: 8px 12px;
       border-radius: 14px;
       font-weight: bold;
       text-align: center;
-      min-width: 130px;    /* 原本250 → 縮小 */
+      min-width: 160px;
       font-size: 0.9rem;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     }
 
     .open {
@@ -85,13 +82,26 @@
       border: 2px solid #b30000;
     }
 
-    #statusText {
-      font-size: 1rem;
+    /* 頂部LINE按鈕 */
+    .header-line-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #06c755;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      transition: 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
-    #countdownText {
-      font-size: 0.78rem;
-      margin-top: 2px;
+    .header-line-btn:hover {
+      background: #05b34a;
+      transform: translateY(-1px);
     }
 
     /* 圖片 */
@@ -105,8 +115,8 @@
       width: 100%;
       height: 250px;
       object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
     /* 菜單 */
@@ -118,17 +128,24 @@
 
     .menu-item {
       background: white;
-      padding: 16px;
-      border-radius: 12px;
+      padding: 15px;
+      border-radius: 10px;
       border: 1px solid #ddd;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      margin-top: 30px;
     }
 
     /* 浮動LINE按鈕 */
     .floating-line {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      right: 16px;
+      bottom: 16px;
       z-index: 9999;
     }
 
@@ -143,41 +160,34 @@
       border-radius: 999px;
       font-weight: bold;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-      animation: floatPulse 2s infinite;
       transition: 0.2s ease;
+      animation: pulse 2s infinite;
     }
 
     .floating-line a:hover {
-      transform: scale(1.05);
       background: #05b34a;
+      transform: translateY(-2px) scale(1.03);
     }
 
     .line-icon {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
-    @keyframes floatPulse {
+    @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.04); }
       100% { transform: scale(1); }
     }
 
-    footer {
-      text-align: center;
-      padding: 18px;
-      background: #eee;
-      margin-top: 40px;
-    }
-
-    /* 手機 */
+    /* 手機版 */
     @media (max-width: 600px) {
-      .status-box {
-        min-width: 120px;
+      .top-action {
+        flex-direction: column;
       }
 
-      .floating-line {
-        right: 12px;
-        bottom: 12px;
+      .status-box {
+        width: 100%;
+        max-width: 260px;
       }
     }
   </style>
@@ -189,12 +199,20 @@
     <h1>沈記蚵腸麵線</h1>
     <p>新北市三重區公園街26號對面</p>
 
-    <!-- 狀態（縮小） -->
+    <!-- 狀態 + LINE（頂部） -->
     <div class="top-action">
+
       <div id="statusBox" class="status-box">
         <div id="statusText">狀態判斷中...</div>
         <div id="countdownText"></div>
       </div>
+
+      <a class="header-line-btn"
+        href="https://line.me/R/ti/p/@923ushmy"
+        target="_blank">
+        💬 LINE聯絡老闆
+      </a>
+
     </div>
   </header>
 
@@ -202,7 +220,7 @@
 
     <section>
       <h2>關於我們</h2>
-      <p>每日東石鮮蚵直送，溫體黑豬腸，手工紅麵線，湯頭濃郁順口。</p>
+      <p>每日東石鮮蚵直送，溫體黑豬腸，手工紅麵線，用料實在。</p>
     </section>
 
     <section>
@@ -234,15 +252,14 @@
     © 2026 沈記蚵腸麵線
   </footer>
 
-  <!-- 浮動LINE -->
+  <!-- 浮動LINE按鈕 -->
   <div class="floating-line">
     <a href="https://line.me/R/ti/p/@923ushmy" target="_blank">
       <span class="line-icon">💬</span>
-      <span>LINE詢問老闆</span>
+      <span>LINE詢問</span>
     </a>
   </div>
 
-  <!-- JS -->
   <script>
     function updateStatus() {
       const now = new Date();
