@@ -49,16 +49,15 @@
       margin-bottom: 15px;
     }
 
-    /* 頂部狀態區（只剩狀態） */
+    /* 頂部狀態區（只保留狀態） */
     .top-action {
       margin-top: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
     }
 
-    /* 縮小版狀態燈 */
+    /* 狀態燈（縮小版） */
     .status-box {
       display: inline-block;
       padding: 9px 14px;
@@ -118,7 +117,7 @@
       margin-top: 30px;
     }
 
-    /* 浮動LINE按鈕 */
+    /* 浮動 LINE 按鈕 */
     .floating-line {
       position: fixed;
       right: 16px;
@@ -143,7 +142,7 @@
 
     .floating-line a:hover {
       background: #05b34a;
-      transform: translateY(-2px) scale(1.03);
+      transform: scale(1.03);
     }
 
     .line-icon {
@@ -172,14 +171,13 @@
     <h1>沈記蚵腸麵線</h1>
     <p>新北市三重區公園街26號對面</p>
 
-    <!-- 只剩營業狀態 -->
+    <!-- 只保留營業狀態 -->
     <div class="top-action">
       <div id="statusBox" class="status-box">
         <div id="statusText">狀態判斷中...</div>
         <div id="countdownText"></div>
       </div>
     </div>
-
   </header>
 
   <main>
@@ -191,6 +189,7 @@
 
     <section>
       <h2>■鮮蚵■大腸■綜合■清麵線</h2>
+
       <div class="food-gallery">
         <img src="noodle1.png" alt="麵線1">
         <img src="noodle2.png" alt="麵線2">
@@ -204,6 +203,7 @@
 
     <section>
       <h2>菜單</h2>
+
       <div class="menu">
         <div class="menu-item">鮮蚵麵線 小55 / 大70</div>
         <div class="menu-item">大腸麵線 小55 / 大70</div>
@@ -218,7 +218,7 @@
     © 2026 沈記蚵腸麵線
   </footer>
 
-  <!-- 浮動LINE按鈕 -->
+  <!-- 浮動 LINE 按鈕（唯一LINE） -->
   <div class="floating-line">
     <a href="https://line.me/R/ti/p/@923ushmy" target="_blank">
       <span class="line-icon">💬</span>
