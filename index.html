@@ -49,20 +49,19 @@
       margin-bottom: 15px;
     }
 
-    /* 頂部狀態區 */
+    /* 頂部狀態區（只剩狀態） */
     .top-action {
       margin-top: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
       flex-wrap: wrap;
     }
 
     /* 縮小版狀態燈 */
     .status-box {
       display: inline-block;
-      padding: 8px 12px;
+      padding: 9px 14px;
       border-radius: 14px;
       font-weight: bold;
       text-align: center;
@@ -80,28 +79,6 @@
       background: #ffe6e6;
       color: #b30000;
       border: 2px solid #b30000;
-    }
-
-    /* 頂部LINE按鈕 */
-    .header-line-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #06c755;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      transition: 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .header-line-btn:hover {
-      background: #05b34a;
-      transform: translateY(-1px);
     }
 
     /* 圖片 */
@@ -181,10 +158,6 @@
 
     /* 手機版 */
     @media (max-width: 600px) {
-      .top-action {
-        flex-direction: column;
-      }
-
       .status-box {
         width: 100%;
         max-width: 260px;
@@ -199,21 +172,14 @@
     <h1>沈記蚵腸麵線</h1>
     <p>新北市三重區公園街26號對面</p>
 
-    <!-- 狀態 + LINE（頂部） -->
+    <!-- 只剩營業狀態 -->
     <div class="top-action">
-
       <div id="statusBox" class="status-box">
         <div id="statusText">狀態判斷中...</div>
         <div id="countdownText"></div>
       </div>
-
-      <a class="header-line-btn"
-        href="https://line.me/R/ti/p/@923ushmy"
-        target="_blank">
-        💬 LINE聯絡老闆
-      </a>
-
     </div>
+
   </header>
 
   <main>
